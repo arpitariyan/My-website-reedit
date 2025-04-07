@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body {
+  background-color: #23242a;
+  margin: 0;
+  padding: 0;
+}
+
+/* @media only screen and (min-width: 900px) {
+  .social-media-icons-1{
+    display: none;
+  }
+} */
