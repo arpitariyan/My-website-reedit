@@ -64,28 +64,28 @@ const educations = [
     institution: 'Saraswati shishu vidya mandir',
     period: '2019',
     description: 'Motivated 10th-grade pass-out with strong learning ability, seeking opportunities to grow skills and gain practical work experience',
-    grade: 'CGPA: 3.0/4.0',
+    grade: 'Percentage: 50%',
   },
   {
     degree: 'Diploma Electrical Engineering',
     institution: 'Nilachal Polytechnic',
     period: '2019-2022',
     description: 'Diploma holder with practical knowledge, strong technical skills, and a desire to apply learning in real-world professional environments.',
-    grade: 'CGPA: 3.88/4.0',
+    grade: 'Percentage: 83.84%',
   },
   {
     degree: 'Full Stack Devlopment',
     institution: 'Skyy Rider Institutions',
     period: '2022',
     description: 'Skilled Full Stack Developer with expertise in front-end and back-end technologies, building responsive, dynamic, and user-friendly web applications.',
-    grade: 'GPA: 5.00/5.00',
+    grade: 'Grade: A' ,
   },
   {
     degree: 'B.Tech Computer Science',
     institution: 'Konark Institute of Science and Technology',
     period: 'Continue',
     description: 'Currently pursuing B.Tech in Computer Science, passionate about coding, problem-solving, and continuously learning new technologies to build innovative solutions.',
-    grade: 'GPA: 5.00/5.00',
+    grade: 'CGPA: 7.75/10',
   },
 ];
 

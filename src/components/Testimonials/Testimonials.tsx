@@ -29,12 +29,14 @@ const TestimonialContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     flexDirection: 'column',
     textAlign: 'center',
+    gap: theme.spacing(6),
   },
 }));
 
 const TestimonialContent = styled(Box)(({ theme }) => ({
   flex: 1,
   position: 'relative',
+  padding: theme.spacing(0, 2),
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -46,7 +48,9 @@ const TestimonialContent = styled(Box)(({ theme }) => ({
     background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2362FF86'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z'/%3E%3C/svg%3E") no-repeat center center`,
     backgroundSize: 'contain',
     [theme.breakpoints.down('md')]: {
-      display: 'none',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      top: -60,
     },
   },
 }));
@@ -57,6 +61,13 @@ const TestimonialImage = styled(Box)(({ theme }) => ({
   height: 'auto',
   borderRadius: theme.spacing(2),
   overflow: 'hidden',
+  [theme.breakpoints.down('md')]: {
+    maxWidth: '100%',
+  },
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: 350,
+    margin: '0 auto',
+  },
   '& img': {
     width: '100%',
     height: 'auto',
@@ -90,11 +101,11 @@ const AuthorImage = styled('img')({
 const testimonials = [
   {
     id: 1,
-    quote: 'Its, a great website, great UI/UX Design, it’s working well, it’s opening very quickly, Web service is also great, It’s great for induvial and business purpose, I got lot better then I had thought’s for this price',
+    quote: 'It\'s a great website, great UI/UX Design, it\'s working well, it\'s opening very quickly, Web service is also great, It\'s great for individual and business purpose, I got lot better than I had thought for this price',
     author: 'Sambit suman jyethi',
     position: 'dribbble',
     avatar: 'https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg',
-    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg',
+    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg'
   },
   {
     id: 2,
@@ -102,24 +113,24 @@ const testimonials = [
     author: 'Deepak Kumar Sahoo',
     position: 'Instagram',
     avatar: profile1,
-    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg',
+    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg'
   },
   {
     id: 3,
-    quote: 'I am a doctor, I got a website mode from you for my clinic, your website is working very well and design is very good ai this price point',
+    quote: 'I am a doctor, I got a website mode from you for my clinic, your website is working very well and design is very good at this price point',
     author: 'Ariyan das',
     position: 'Doctor of Dental Surgery',
     avatar: 'https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg',
-    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg',
+    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg'
   },
   {
     id: 4,
-    quote: 'Project Creation’s software exceeded expectations with its smooth performance, user-friendly interface, and responsive customer support. Easy to use, reliable, and efficient.',
+    quote: 'Project Creation\'s software exceeded expectations with its smooth performance, user-friendly interface, and responsive customer support. Easy to use, reliable, and efficient.',
     author: 'Alok Kumar Roul',
     position: 'developer',
     avatar: 'https://i.pinimg.com/736x/0d/64/98/0d64989794b1a4c9d89bff571d3d5842.jpg',
-    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg',
-  },
+    image: 'https://st4.depositphotos.com/4836865/39321/i/450/depositphotos_393212636-stock-photo-business-people-team-sitting-meeting.jpg'
+  }
 ];
 
 const slideVariants = {
@@ -189,11 +200,12 @@ const Testimonials: React.FC = () => {
               <Box 
                 sx={{ 
                   position: 'relative', 
-                  minHeight: 400, 
+                  minHeight: { xs: 600, sm: 650, md: 400 }, 
                   overflow: 'hidden',
                   display: 'flex',
                   justifyContent: 'center',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  px: { xs: 2, sm: 3, md: 0 }
                 }}
               >
                 <m.div
@@ -242,12 +254,13 @@ const Testimonials: React.FC = () => {
                             lineHeight: 1.8,
                             fontWeight: 400,
                             fontStyle: 'italic',
+                            fontSize: { xs: '1.1rem', sm: '1.25rem', md: '1.5rem' }
                           }}
                         >
                           {testimonials[page].quote}
                         </Typography>
                       </Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center', mt: 4 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mt: 4, justifyContent: { xs: 'center', md: 'flex-start' } }}>
                         <AuthorImage
                           src={testimonials[page].avatar}
                           alt={testimonials[page].author}
@@ -284,8 +297,10 @@ const Testimonials: React.FC = () => {
                   display: 'flex',
                   gap: 2,
                   position: 'absolute',
-                  bottom: -80,
-                  right: 0,
+                  bottom: { xs: -60, sm: -80 },
+                  right: { xs: '50%', md: 0 },
+                  transform: { xs: 'translateX(50%)', md: 'none' },
+                  zIndex: 2
                 }}
               >
                 <NavigationButton

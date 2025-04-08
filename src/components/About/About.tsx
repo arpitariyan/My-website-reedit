@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Container, Grid, Typography, styled } from '@mui/material';
-import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import profile from '../../Images/Untitled design (2).png';
-import Signatureimage from '../../Images/SIgnture_main.png';
+import Signatureimage from '../../Images/Signture_arpit.png';
 
 const AboutSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -84,6 +84,10 @@ const InfoGrid = styled(Grid)(({ theme }) => ({
   '& .MuiTypography-root': {
     marginBottom: theme.spacing(1),
   },
+  [theme.breakpoints.down('sm')]: {
+    marginTop: theme.spacing(4),
+    width: '100%',
+  },
 }));
 
 const InfoItem = styled(Box)(({ theme }) => ({
@@ -91,6 +95,12 @@ const InfoItem = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   borderBottom: '1px solid rgba(255,255,255,0.1)',
   padding: theme.spacing(1, 0),
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: theme.spacing(2),
+    paddingBottom: theme.spacing(1.5),
+  },
 }));
 
 const Signature = styled(Box)(({ theme }) => ({
@@ -98,12 +108,24 @@ const Signature = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   gap: theme.spacing(2),
+  [theme.breakpoints.down('sm')]: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    marginTop: theme.spacing(4),
+    width: '100%',
+  },
 }));
 
-const SignatureImage = styled('img')({
+const SignatureImage = styled('img')(({ theme }) => ({
   height: 60,
   marginRight: 16,
-});
+  [theme.breakpoints.down('sm')]: {
+    marginRight: 0,
+    marginBottom: theme.spacing(2),
+    height: 50,
+  },
+}));
 
 const TiltWrapper = styled(motion.div)({
   width: '100%',
@@ -114,7 +136,7 @@ const TiltWrapper = styled(motion.div)({
 
 const About: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const z = useMotionValue(0);
@@ -157,7 +179,7 @@ const About: React.FC = () => {
     <Box id="about" component="section">
       <AboutSection>
         <Container maxWidth="lg">
-          <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
+          <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
             <Grid item xs={12} md={6} sx={{ width: '100%' }}>
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -181,7 +203,7 @@ const About: React.FC = () => {
                     <ProfileImage>
                       <motion.img
                         src={profile}
-                        alt="James Smith"
+                        alt="Arpit Ariyan Maharana"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
@@ -205,6 +227,7 @@ const About: React.FC = () => {
                     fontWeight: 600,
                     marginBottom: 2,
                     letterSpacing: 1,
+                    textAlign: 'left'
                   }}
                 >
                   ABOUT ME
@@ -215,6 +238,8 @@ const About: React.FC = () => {
                     fontWeight: 700,
                     marginBottom: 3,
                     color: '#fff',
+                    textAlign: 'left',
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
                   }}
                 >
                   I Develop System that Works
@@ -225,71 +250,74 @@ const About: React.FC = () => {
                     color: 'rgba(255,255,255,0.7)',
                     marginBottom: 4,
                     lineHeight: 1.8,
+                    textAlign: 'left',
+                    fontSize: { xs: '0.95rem', sm: '1rem' }
                   }}
                 >
                   Detail-oriented, analytical, and self-driven programmer with extensive experience building userfacing applications. Efficient and knowledgeable coder with skills in HTML, CSS, React-js, and JavaScript, java programming languages. Coordinated and collaborative team player with attention to detail, graphic design skills, and the ability to contribute to code base improvement initiatives and UX improvement projects.
                 </Typography>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  {/* <Typography
-                    variant="body1"
-                    sx={{
-                      color: 'rgba(255,255,255,0.7)',
-                      marginBottom: 4,
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    Oremque laudantium, totaeaque ipsa quae
-                  </Typography> */}
+                <InfoGrid container spacing={2} sx={{ px: { xs: 0, sm: 0 } }}>
+                  <Grid item xs={12} sm={6} sx={{ pl: { xs: 0, sm: 0 } }}>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Name</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', wordBreak: 'break-word', flex: 1 }}>Arpit Ariyan Maharana</Typography>
+                    </InfoItem>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Age</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', flex: 1 }}>22 Years</Typography>
+                    </InfoItem>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Occupation</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', flex: 1 }}>UI/UX Designer</Typography>
+                    </InfoItem>
+                  </Grid>
+                  <Grid item xs={12} sm={6} sx={{ pl: { xs: 0, sm: 2 } }}>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Phone</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', wordBreak: 'break-word', flex: 1 }}>+91 9348297217</Typography>
+                    </InfoItem>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Email</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', wordBreak: 'break-word', flex: 1 }}>arpitariyanm@gmail.com</Typography>
+                    </InfoItem>
+                    <InfoItem>
+                      <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 600, minWidth: '90px' }}>Nationality</Typography>
+                      <Typography variant="body2" sx={{ color: '#fff', flex: 1 }}>Indian</Typography>
+                    </InfoItem>
+                  </Grid>
+                </InfoGrid>
 
-                  <InfoGrid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Name</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>Arpit Ariyan Maharana</Typography>
-                      </InfoItem>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Age</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>22 Years</Typography>
-                      </InfoItem>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Occupation</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>UI/UX Designer</Typography>
-                      </InfoItem>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} sm={6} lg={6}>
+                      <Signature>
+                        <SignatureImage src={Signatureimage} alt="Arpit Ariyan Maharana Signature" />
+                      </Signature>
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Phone</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>+91 9348297217</Typography>
-                      </InfoItem>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Email</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>arpitariyanm@gmail.com</Typography>
-                      </InfoItem>
-                      <InfoItem>
-                        <Typography variant="subtitle2" sx={{ color: 'rgba(255,255,255,0.6)' }}>Nationality</Typography>
-                        <Typography variant="body2" sx={{ color: '#fff' }}>Indian</Typography>
-                      </InfoItem>
+                    <Grid item xs={12} sm={6} lg={6} sx={{marginTop:'22px'}}>
+                      <Box sx={{ textAlign: 'left' }}>
+                        <Typography variant="h6" sx={{ fontWeight: 600, color: '#fff' }}>
+                          Arpit Ariyan Maharana
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                          UI/UX Designer, Devocks Inc.
+                        </Typography>
+                      </Box>
                     </Grid>
-                  </InfoGrid>
-
-                  <Signature>
-                    <SignatureImage src={Signatureimage} alt="Bruce Wayne Signature" />
-                    <Box>
-                      <Typography variant="h6" sx={{ fontWeight: 600, color: '#fff' }}>
-                        Arpit Ariyan Maharana
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                        UI/UX Designer, Devocks Inc.
-                      </Typography>
-                    </Box>
-                  </Signature>
-                </motion.div>
+                  </Grid>
+                </Box>
+                {/* <Signature>
+                  <SignatureImage src={Signatureimage} alt="Arpit Ariyan Maharana Signature" />
+                  <Box sx={{ textAlign: 'left' }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, color: '#fff' }}>
+                      Arpit Ariyan Maharana
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
+                      UI/UX Designer, Devocks Inc.
+                    </Typography>
+                  </Box>
+                </Signature> */}
               </motion.div>
             </Grid>
           </Grid>
