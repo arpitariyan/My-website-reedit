@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import LaunchIcon from '@mui/icons-material/Launch';
 import CloseIcon from '@mui/icons-material/Close';
-import AddIcon from '@mui/icons-material/Add';
+// import AddIcon from '@mui/icons-material/Add';
 import project1 from '../../Images/Whats_app_bot.jpg'
 import project2 from '../../Images/Attdance_and_payrolls.jpg'
 import project3 from '../../Images/Leraing_management_system.jpg'
 import project4 from '../../Images/Squal.jpg'
 import project5 from '../../Images/TMS.jpg'
 import project6 from '../../Images/Project_Developments.jpg'
+import project7 from '../../Images/ChatBox Ai.png'
 
 const ProjectsSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -191,6 +192,14 @@ const projects = [
     description: 'Reacts growth requires responsive and UI-driven user interfaces with the aid of reusable components. Developers build SPAs and manage state profficiently using Redux or Context API. It is also ideal for front end developers and teams due to its ease of integration with APIs, enhancement of business and start-up performance through the virtual DOM, and providing scalability and maintainability to web applications.',
     image: project6,
     link: 'https://github.com/arpitariyan',
+  },
+  {
+    id: 7,
+    category: 'ChatBox Ai',
+    title: 'Artificial intelligence ChatBox',
+    description: 'Artificial Intelligence (AI) simulates human intelligence in machines, enabling learning, reasoning, and problem-solving. It powers chatbots, self-driving cars, and medical diagnostics, transforming industries with automation and data-driven insights. AI enhances efficiency, personalization, and decision-making across sectors, from healthcare to finance, revolutionizing how we interact with technology.',
+    image: project7,
+    link: 'https://chatboxai-technonweb.netlify.app/',
   },
 ];
 
