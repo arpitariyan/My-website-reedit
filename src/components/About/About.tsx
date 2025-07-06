@@ -254,7 +254,14 @@ const About: React.FC = () => {
                     fontSize: { xs: '0.95rem', sm: '1rem' }
                   }}
                 >
-                  Detail-oriented, analytical, and self-driven programmer with extensive experience building userfacing applications. Efficient and knowledgeable coder with skills in HTML, CSS, React-js, and JavaScript, java programming languages. Coordinated and collaborative team player with attention to detail, graphic design skills, and the ability to contribute to code base improvement initiatives and UX improvement projects.
+                  I think, I'm a creative and totally passionate designer with a sharp eye for
+                  detail and a love for clean, I mean, impactful design... usually... I specialize
+                  in creating unique visuals that blend creativity with functionality — from
+                  logos and branding to social media posts and UI designs...! My work is
+                  focused on bringing ideas to life through thoughtful design, more or less,
+                  strong composition, seriously more or less, and modern aesthetics. You
+                  see, more or less, i believe good design not only looks beautiful but also
+                  communicates and seriously connects emotionally.
                 </Typography>
 
                 <InfoGrid container spacing={2} sx={{ px: { xs: 0, sm: 0 } }}>
@@ -295,13 +302,13 @@ const About: React.FC = () => {
                         <SignatureImage src={Signatureimage} alt="Arpit Ariyan Maharana Signature" />
                       </Signature>
                     </Grid>
-                    <Grid item xs={12} sm={6} lg={6} sx={{marginTop:'22px'}}>
+                    <Grid item xs={12} sm={6} lg={6} sx={{ marginTop: '22px' }}>
                       <Box sx={{ textAlign: 'left' }}>
                         <Typography variant="h6" sx={{ fontWeight: 600, color: '#fff' }}>
                           Arpit Ariyan Maharana
                         </Typography>
                         <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)' }}>
-                          UI/UX Designer, Devocks Inc.
+                          UI/UX Designer
                         </Typography>
                       </Box>
                     </Grid>

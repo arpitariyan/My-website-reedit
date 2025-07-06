@@ -231,7 +231,7 @@ const Navbar = () => {
           }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          href='https://drive.google.com/file/d/1E4omdge4IK5-JvykL67xt9o5gdDeQTeh/view?pli=1'
+          href='https://drive.google.com/file/d/1wx_SBdd6FyzZCOBT5kJ4kOBdk0f-p-cb/view?usp=sharing'
         >
           DOWNLOAD CV
         </MotionButton>
