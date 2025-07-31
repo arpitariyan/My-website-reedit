@@ -135,17 +135,24 @@ const TiltWrapper = styled(motion.div)({
 });
 
 const About: React.FC = () => {
+
   const [isHovered, setIsHovered] = useState(false);
   // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const z = useMotionValue(0);
 
+
+
   const springConfig = { stiffness: 300, damping: 30 };
   const springRotateX = useSpring(rotateX, springConfig);
   const springRotateY = useSpring(rotateY, springConfig);
   const springZ = useSpring(z, { stiffness: 200, damping: 25 });
 
+
+
+
+  
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const element = e.currentTarget;
     const rect = element.getBoundingClientRect();
